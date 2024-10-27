@@ -156,8 +156,11 @@ class TelegramAIChatBot:
         else:
             await message.edit_text(response)
 
-
-# Instantiate and run the bot
-if __name__ == "__main__":
+def run_telegram_bot():
+    """Function to instantiate and run the Telegram bot."""
     bot = TelegramAIChatBot()
     bot.application.run_polling()
+
+# Run the bot when the script is executed directly
+if __name__ == "__main__":
+    run_telegram_bot()

@@ -118,8 +118,12 @@ class AIChatBotListener(StreamListener):
         for chunk in response_chunks:
             api.send_direct_message(sender_id, chunk)
 
-# Start the Twitter Stream
-if __name__ == "__main__":
+def run_twitter_bot():
+    """Function to instantiate and start the Twitter bot stream."""
     listener = AIChatBotListener()
     stream = Stream(auth, listener)
     stream.filter(track=[f"@{api.me().screen_name}"], is_async=True)
+
+# Start the Twitter bot when the script is executed directly
+if __name__ == "__main__":
+    run_twitter_bot()

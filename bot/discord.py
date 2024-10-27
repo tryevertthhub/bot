@@ -6,7 +6,7 @@ import aiohttp
 import os
 from dotenv import load_dotenv
 
-
+# Load environment variables from .env
 load_dotenv()
 
 # Fetch tokens and keys from environment variables
@@ -20,7 +20,7 @@ class AIChatBot(commands.Bot):
     A Discord bot that allows users to interact with an AI API via commands.
     Provides both interactive and direct command-based querying functionalities.
     """
-    
+
     def __init__(self):
         """
         Initializes the bot with required intents, command prefix, and event listeners.
@@ -29,7 +29,7 @@ class AIChatBot(commands.Bot):
         intents = discord.Intents.default()
         intents.message_content = True
         super().__init__(command_prefix="/", intents=intents)
-        
+
         # Initialize commands and interactions
         self.setup_commands()
 
@@ -157,7 +157,7 @@ class AIChatBot(commands.Bot):
                 """
                 await interaction.response.defer(ephemeral=True)
                 user_message = self.question.value
-                await bot.show_thinking_message(interaction, user_message)
+                await self.show_thinking_message(interaction, user_message)
 
         await interaction.response.send_modal(AskModal())
 
@@ -172,7 +172,10 @@ class AIChatBot(commands.Bot):
         if custom_id == "ask_ai_button":
             await self.handle_modal_interaction(interaction)
 
-
 # Instantiate and run the bot
-bot = AIChatBot()
-bot.run(DISCORD_BOT_TOKEN)
+def run_discord_bot():
+    bot = AIChatBot()
+    bot.run(DISCORD_BOT_TOKEN)
+
+if __name__ == "__main__":
+    run_discord_bot()
