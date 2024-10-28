@@ -148,6 +148,10 @@ class AIChatBot(commands.Bot):
         class AskModal(discord.ui.Modal, title="Ask the AI"):
             question = discord.ui.TextInput(label="What would you like to ask the AI?", style=discord.TextStyle.paragraph)
 
+            def __init__(self, bot):
+                super().__init__()
+                self.bot = bot  # Store bot instance to access bot methods
+
             async def on_submit(self, interaction: discord.Interaction):
                 """
                 Handles submission of the modal, defers the interaction, and processes the user message.
@@ -157,9 +161,9 @@ class AIChatBot(commands.Bot):
                 """
                 await interaction.response.defer(ephemeral=True)
                 user_message = self.question.value
-                await self.show_thinking_message(interaction, user_message)
+                await self.bot.show_thinking_message(interaction, user_message)
 
-        await interaction.response.send_modal(AskModal())
+        await interaction.response.send_modal(AskModal(self))
 
     async def on_interaction(self, interaction: discord.Interaction):
         """
