@@ -104,3 +104,9 @@ Each bot has an entry point in setup.py, so you can run each directly with:
  run_telegram_bot
  run_twitter_bot
  ```
+### Bot Install Guide
+
+#### DIscord bot
+- At first, visit https://discord.com/developers/applications/
+![Alt text](images/create_bot.png)
+click  <a href="" style="background-color: #0000FF; color: white; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;">New Application</a> button.
