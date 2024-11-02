@@ -108,5 +108,11 @@ Each bot has an entry point in setup.py, so you can run each directly with:
 
 #### DIscord bot
 - At first, visit https://discord.com/developers/applications/
-![Alt text](images/create_bot.png)
-click  <a href="" style="background-color: #0000FF; color: white; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;">New Application</a> button.
+![create bot](images/create_bot.png)
+click  <a  style="background-color: #0000FF; color: white; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;">New Application</a> button.
+- Next, go to tab `General Information`, and complete bot profile
+![complete bot profile](images/general_info.png)
+- create bot token, and enable bot settings.
+![ create bot token ](images/bot.png)
+- finally, Add bot permission, and generate bot invite link
+![generate  bot url](images/generate.png)
