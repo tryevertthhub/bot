@@ -133,11 +133,14 @@ class TelegramAIChatBot:
             update (Update): The Telegram update object.
             message (str): The user's message to be processed by the AI.
         """
-        thinking_message = await update.message.reply_text("Thinking...")
-        ai_response = await self.fetch_ai_response(message)
-        
-        # If response is too long, send it in chunks
-        await self.display_response_with_chunks(update, ai_response, thinking_message)
+        if update.message:  # Ensure message is not None
+            thinking_message = await update.message.reply_text("Thinking...")
+            ai_response = await self.fetch_ai_response(message)
+            
+            # If response is too long, send it in chunks
+            await self.display_response_with_chunks(update, ai_response, thinking_message)
+        else:
+            print("Received an update with no message content.")
 
     async def display_response_with_chunks(self, update: Update, response: str, message):
         """
@@ -148,13 +151,16 @@ class TelegramAIChatBot:
             response (str): The full AI response to be displayed.
             message: The initial "Thinking..." message to edit or replace.
         """
-        if len(response) > 4096:
-            response_chunks = [response[i:i + 4096] for i in range(0, len(response), 4096)]
-            await message.edit_text(response_chunks[0])
-            for chunk in response_chunks[1:]:
-                await update.message.reply_text(chunk)
+        if update.message:  # Ensure message is not None
+            if len(response) > 4096:
+                response_chunks = [response[i:i + 4096] for i in range(0, len(response), 4096)]
+                await message.edit_text(response_chunks[0])
+                for chunk in response_chunks[1:]:
+                    await update.message.reply_text(chunk)
+            else:
+                await message.edit_text(response)
         else:
-            await message.edit_text(response)
+            print("Received an update with no message content.")
 
 def run_telegram_bot():
     """Function to instantiate and run the Telegram bot."""
