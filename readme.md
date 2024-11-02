@@ -106,7 +106,7 @@ Each bot has an entry point in setup.py, so you can run each directly with:
  ```
 ### Bot Install Guide
 
-#### DIscord bot
+#### Discord bot
 - At first, visit https://discord.com/developers/applications/
 ![create bot](images/create_bot.png)
 click  <a  style="background-color: #0000FF; color: white; padding: 5px 5px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;">New Application</a> button.
@@ -116,3 +116,11 @@ click  <a  style="background-color: #0000FF; color: white; padding: 5px 5px; tex
 ![ create bot token ](images/bot.png)
 - finally, Add bot permission, and generate bot invite link
 ![generate  bot url](images/generate.png)
+
+#### Telegram bot
+- Open Telegram, and search `@BotFather`
+![bot father](images/botfather.png)
+- click `start` button and input `/newbot` to create bot.
+![bot father](images/create_bottg.png)
+- comple bot profile (name and id)
+![bot info](images/bot_info.png)
