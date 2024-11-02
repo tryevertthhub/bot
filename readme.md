@@ -124,3 +124,13 @@ click  <a  style="background-color: #0000FF; color: white; padding: 5px 5px; tex
 ![bot father](images/create_bottg.png)
 - comple bot profile (name and id)
 ![bot info](images/bot_info.png)
+
+#### Twitter bot
+- go to developer.twitter.com and log in with an existing account
+
+- Create a Twitter project and app
+![create twitter bot](images/create_twitterbot.png)
+- Create bot token api key
+![create twitter bot token](images/twitter_bottoken.png)
+- Edit bot setting
+![create twitter bot token](images/twitter_botsetting.png)
