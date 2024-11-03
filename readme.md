@@ -30,8 +30,8 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/your-username/my_bot_package.git
-   cd my_bot_package
+   git clone https://github.com/tryevertthhub/bot
+   cd bot
 
 2. **Set Up Environment Variables**
 Create a `.env `file in the root directory with your credentials:
@@ -46,6 +46,17 @@ Create a `.env `file in the root directory with your credentials:
     ```
 3. **Install the Package and Dependencies**
    ```bash
+   cd discord
+   pip install -e .  
+   ```
+   for telegram bot
+   ```bash
+   cd telegram
+   pip install -e .  
+   ```
+   for twitter bot
+    ```bash
+   cd twitter
    pip install -e .  
    ```
 This command installs the package in editable mode along with required dependencies specified in `setup.py`.
@@ -86,16 +97,23 @@ The code is modularly organized into different bot files under bot/:
 
 
 ```plaintext
-bot/
-├── bot/
-│   ├── __init__.py
-│   ├── discord_bot.py   # Discord bot functionalities
-│   ├── telegram_bot.py  # Telegram bot functionalities
-│   ├── twitter_bot.py   # Twitter bot functionalities
-├── .env                 # Environment variables
-├── README.md            # Documentation
-├── requirements.txt     # Dependencies
-└── setup.py             # Package configuration
+my_bot_package/
+├── discord/
+│   ├── bot.py         # Discord bot functionalities
+│   ├── setup.py       # Discord bot package configuration
+│   ├── readme.md      # description for discord bot
+├── telegram/
+│   ├── bot.py         # Telegram bot functionalities
+│   ├── setup.py       # Telegram bot package configuration
+│   ├── readme.md      # description for telegram  bot
+├── twitter/
+│   ├── bot.py         # Twitter bot functionalities
+│   ├── setup.py       # Twitter bot package configuration
+│   ├── readme.md      # description for twitter  bot
+├── .env               # Environment variables
+├── README.md          # Documentation
+└── images/            # Folder for images used in the README
+
 ```
 ### Entry Points and Package Structure
 Each bot has an entry point in setup.py, so you can run each directly with:
@@ -134,3 +152,5 @@ click  <a  style="background-color: #0000FF; color: white; padding: 5px 5px; tex
 ![create twitter bot token](images/twitter_bottoken.png)
 - Edit bot setting
 ![create twitter bot token](images/twitter_botsetting.png)
+
+## License
