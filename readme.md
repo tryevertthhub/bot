@@ -30,7 +30,7 @@
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/tryevertthhub/bot
+   git clone https://github.com/tryevertthhub/bot.git
    cd bot
 
 2. **Set Up Environment Variables**
