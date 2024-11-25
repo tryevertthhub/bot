@@ -31,7 +31,7 @@
 
    ```bash
    git clone https://github.com/tryevertthhub/bot.git
-   cd bot
+   cd bots
 
 2. **Set Up Environment Variables**
 Create a `.env `file in the root directory with your credentials:
