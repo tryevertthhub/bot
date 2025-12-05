@@ -8,7 +8,7 @@
 - **Telegram Bot**: Uses commands `/call` and `/ask` to provide responses in Telegram chat.
 - **Twitter Bot**: Listens for mentions and DMs to respond with AI-generated replies.
 - **Modular and Scalable**: Built with flexibility to add more platforms or commands.
-
+- **Whatsapp bot**
 ---
 
 ## Getting Started
